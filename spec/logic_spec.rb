@@ -7,7 +7,9 @@ require_relative '../lib/game'
 
 describe 'Logic' do
   display = UI.new
-  display.configure_players
+  display.players = 0
+  display.update_scoreboard('players')
+  display.configuring_player_names(0)
   display.finished_scoreboard = true
   logic = Logic.new(0, 'K the Komputer', 'B the Bot', display)
 
