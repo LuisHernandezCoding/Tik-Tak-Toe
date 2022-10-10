@@ -1,7 +1,4 @@
-# frozen_string_literal: true
-
 require_relative 'logic'
-require_relative 'ui'
 require_relative 'colors'
 
 TITLE = 'Tic Tac Toe Game'.yellow.bold.center(64)
@@ -84,14 +81,12 @@ class UI
     update_ui
   end
 
-  # rubocop:disable Metrics/AbcSize
   def update_scoreboard_display(status)
     @scoreboard_display = ["#{MARGIN + MARGIN.bg_cyan} #{'Players:'.green.bold} ", CYAN_FULL_LINE] if status == 'start'
     @scoreboard_display[0] += "#{@players.to_s.green.bold}  #{MARGIN.bg_cyan} " if status == 'players'
     @scoreboard_display[0] += @player1.center(21).bold.red + MARGIN.bg_cyan if status == 'naming1'
     @scoreboard_display[0] += @player2.center(21).bold.cyan + MARGIN.bg_cyan if status == 'naming2'
   end
-  # rubocop:enable Metrics/AbcSize
 
   def show_input_bar
     puts BLACK_FULL_LINE

@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 require_relative '../lib/colors'
 require_relative '../lib/game'
 require_relative '../lib/logic'

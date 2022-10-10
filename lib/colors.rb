@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # rubocop:disable Style/SingleLineMethods
 # Extention to string class to add color to
 class String
