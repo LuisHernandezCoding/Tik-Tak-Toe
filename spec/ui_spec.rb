@@ -20,7 +20,9 @@ describe 'UI updates' do
 
   describe '#update_board' do
     it 'should update the board' do
-      ui.configure_players
+      ui.players = 0
+      ui.update_scoreboard('players')
+      ui.configuring_player_names(0)
       ui.board[0] = 'X'.bg_black
       expect(ui.board).to eql(['X'.bg_black, (2..9).to_a.map { |i| i.to_s.bg_black }].flatten)
     end
@@ -39,7 +41,9 @@ describe 'UI configuration' do
     it 'should configure the players' do
       ui = UI.new
       ui.update_ui
-      ui.configure_players
+      ui.players = 0
+      ui.update_scoreboard('players')
+      ui.configuring_player_names(0)
       expect(ui.players).not_to eql(nil)
       expect(ui.player1).not_to eql(nil)
       expect(ui.player2).not_to eql(nil)
@@ -54,7 +58,9 @@ describe 'UI configuration' do
       expect(ui.scoreboard).to eql([' ', ' '])
     end
     it 'checks the scoreboard array if is finished' do
-      ui.configure_players
+      ui.players = 0
+      ui.update_scoreboard('players')
+      ui.configuring_player_names(0)
       expect(ui.scoreboard).to eql([ui.players, ui.player1, ui.player2])
     end
   end
