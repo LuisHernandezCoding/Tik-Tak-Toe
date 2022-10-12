@@ -106,11 +106,15 @@ class UI
     configuring_player_names(@players)
   end
 
-  # rubocop:disable Style/Semicolon
   def configuring_player_names(players)
-    players.zero? ? (naming(1, true); naming(2, true)) : (naming(1, false); naming(2, players == 1))
+    if players.zero?
+      naming(1, true)
+      naming(2, true)
+    elsif players != 0
+      naming(1, true)
+      naming(2, players == 1)
+    end
   end
-  # rubocop:enable Style/Semicolon
 
   def naming(player_number, is_a_computer)
     name = player_number == 1 ? 'K the Komputer' : 'B the Bot'
@@ -127,7 +131,7 @@ class UI
 
   def getting_player_name
     name = gets.chomp
-    while name.empty? || name.length > 20
+    if name.empty? || name.length > 20
       @messages = ['Invalid name', 'Try again:']
       update_ui
       name = gets.chomp

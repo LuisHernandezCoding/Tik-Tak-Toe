@@ -15,9 +15,6 @@ The main goal is to put into practice main concepts from Object Oriented Program
 - The game prompts the first player to select from available moves
 - Once a player has selected a valid move, the game is updated and shows the board
 - We switch the turn to the second player and repeat behavior
-- The game ends when there is a winner or it is a draw
-
-## Table of contents
 - [Built With](#built-with)
 - [Live Demo](#live-demo)
 - [Getting Started](#getting-started)
@@ -45,7 +42,7 @@ To get a local copy up and running follow these simple example steps.
 - Make sure you have Ruby installed on your machine
 - Clone this repository with
 ```bash
-git clone https://github.com/LuisHernandezCoding/tic_tac_toe
+git clone git@github.com:LuisHernandezCoding/Tik-Tak-Toe.git
 ```
 
 ### Usage
