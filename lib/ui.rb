@@ -111,7 +111,7 @@ class UI
       naming(1, true)
       naming(2, true)
     elsif players != 0
-      naming(1, true)
+      naming(1, false)
       naming(2, players == 1)
     end
   end

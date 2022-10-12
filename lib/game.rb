@@ -15,7 +15,7 @@ class Game
       @logic.next_turn
       break if @logic.winner? || @logic.turn == 9
     end
-    winner = @logic.turn.even? ? @player1 : @player2
+    winner = @logic.turn.odd? ? @player1 : @player2
     final_message = @logic.winner? ? "Congratulations #{winner}! You won!" : "It's a tie!"
     @ui.messages = [final_message, 'End of the game!']
     @ui.update_ui

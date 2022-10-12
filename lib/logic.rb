@@ -6,7 +6,7 @@ WINNING_COMBINATIONS = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [1, 4, 7], [2, 5, 8], [
 # Class containing the logic of the game
 class Logic
   attr_reader :board, :player1, :player2, :players
-  attr_accessor :turn, :actual_symbol, :actual_player_name
+  attr_accessor :turn, :actual_symbol, :player_name
 
   def initialize(players, player1, player2, ui_display)
     @players = players
@@ -15,7 +15,7 @@ class Logic
     @player2 = player2
     @ui_display = ui_display
     @actual_symbol = 'X'.bg_black.red
-    @actual_player_name = @player1
+    @player_name = @player1
   end
 
   def next_turn
@@ -32,7 +32,7 @@ class Logic
   end
 
   def player_turn
-    @ui_display.messages = ["#{@actual_player_name}, it's your turn!", 'Pick an empty number from 1 to 9']
+    @ui_display.messages = ["#{@player_name}, it's your turn!", 'Pick an empty number from 1 to 9']
     @ui_display.update_ui
     player_input = check_user_input.to_i
     @ui_display.board[player_input - 1] = @actual_symbol
@@ -43,7 +43,7 @@ class Logic
   def check_user_input
     player_input = gets.chomp.to_i
     while player_input.to_i < 1 || player_input.to_i > 9 || check_if_empty?(player_input.to_i) == false
-      @ui_display.messages = ["#{@actual_player_name}, please pick a valid number!", 'Pick an empty number from 1 to 9']
+      @ui_display.messages = ["#{@player_name}, please pick a valid number!", 'Pick an empty number from 1 to 9']
       @ui_display.update_ui
       player_input = gets.chomp
     end
