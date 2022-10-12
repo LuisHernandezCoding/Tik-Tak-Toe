@@ -35,7 +35,7 @@ class UI
   end
 
   def update_ui
-    system 'clear'
+    system 'clear' or system 'cls'
     show_header
     show_message
     show_board if @finished_scoreboard
