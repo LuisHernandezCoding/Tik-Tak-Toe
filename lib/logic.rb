@@ -36,7 +36,6 @@ class Logic
     @ui_display.update_ui
     player_input = check_user_input.to_i
     @ui_display.board[player_input - 1] = @actual_symbol
-    @ui_display.update_ui
     @turn += 1
   end
 
@@ -69,9 +68,8 @@ class Logic
     actual_computer_name = @turn.even? ? @player1 : @player2
     @ui_display.loading_animation("#{actual_computer_name.no_colors} is thinking...")
     computer_input = rand(1..9)
-    p computer_input = rand(1..9) until check_if_empty?(computer_input)
+    computer_input = rand(1..9) until check_if_empty?(computer_input)
     @ui_display.board[computer_input - 1] = symbol
-    @ui_display.update_ui
     @turn += 1
   end
 
