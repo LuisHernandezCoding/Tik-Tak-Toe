@@ -15,15 +15,6 @@ The main goal is to put into practice main concepts from Object Oriented Program
 - The game prompts the first player to select from available moves
 - Once a player has selected a valid move, the game is updated and shows the board
 - We switch the turn to the second player and repeat behavior
-- [Built With](#built-with)
-- [Live Demo](#live-demo)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Setup](#setup)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-- [Authors](#authors)
-- [Credits](#credits)
 
 ## Built With
 
