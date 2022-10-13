@@ -16,6 +16,8 @@ The main goal is to put into practice main concepts from Object Oriented Program
 - Once a player has selected a valid move, the game is updated and shows the board
 - We switch the turn to the second player and repeat behavior
 
+![Game Preview](./assets/Preview.png?raw=true "Game Preview")
+
 ## Built With
 
 - Ruby v 3.1.2p20
